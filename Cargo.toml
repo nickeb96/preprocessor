@@ -1,0 +1,11 @@
+[package]
+name = "preprocessor"
+version = "0.1.0"
+authors = ["nickeb96 <nickboyle5496@gmail.com>"]
+
+[dependencies]
+regex = { version="*", features=["unstable"] }
+getopts = "*"
+indoc = "*"
+tokenizer = { git="https://github.com/nickeb96/tokenizer" }
+lazy_static = "*"

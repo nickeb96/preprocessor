@@ -1,0 +1,41 @@
+.TH RCPP 1
+.SH NAME
+rcpp \- rust c preprocessor
+.SH SYNOPSIS
+.B rcpp
+[\fB\-hvVq\fR]
+[\fB\-D\fR|\fB\-\-define\fR \fIMACRO_NAME[=VALUE]\fR]
+[\fB\-I\fR|\fB\-\-include\-path\fR \fIINCLUDE_DIR\fR]
+.IR file ...
+.SH DESCRIPTION
+.B rcpp
+is a C PreProcessor written in the Rust programming language.
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Display usage information and help text.
+.TP
+.BR \-V
+Display version information.
+.TP
+.BR \-v
+Make rcpp verbose.
+.TP
+.BR \-D ", " \-\-define " " \fIMACRO_NAME[=VALUE]\fR
+Defines a macro before the files are preprocessed with the name
+\fIMACRO_NAME\fR and an optional \fIVALUE\fR.
+.TP
+.BR \-I ", " \-\-include-dir " " \fIINCLUDE_DIR\fR
+Adds a directory, \fIINCLUDE_DIR\fR, to the list of directories that are looked
+at when an include macro is encountered.
+.SH EXAMPLES
+.PP
+.nf
+.RS
+rcpp -D NDEBUG -I $HOME/.local/include main.c
+.RE
+.fi
+.PP
+The above command would preprocess the file `main.c' with the macro `NDEBUG`
+defined and with the user's .local/include directory added to the list of
+include directories.
